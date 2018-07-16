@@ -1,0 +1,36 @@
+{
+  "Test": {
+    "questions": {
+      "firstQuestion": "Что такое HTML?",
+      "secondQuestion": "За что отвечает тег 'p'?",
+      "thirdQuestion": "Что такое CSS?",
+      "fourdQuestion": "За что отвечает свойство background-color?"
+    },
+    "answers": {
+      "firstQuestion": {
+        "firstVariant": "Язык программирования",
+        "secondVariant": "Язык разметки страницы",
+        "thirdVariant": "Список команд",
+        "fourdVariant": "Список тегов"
+      },
+      "secondQuestion": {
+        "firstVariant": "Определяет абзац текста",
+        "secondVariant": "Добавляет изображение",
+        "thirdVariant": "Добавляет ссылку",
+        "fourdVariant": "Определяет заголовок"
+      },
+      "thirdQuestion": {
+        "firstVariant": "Язык каскадных стилей документа",
+        "secondVariant": "Язык программирования",
+        "thirdVariant": "Язык разметки страницы",
+        "fourdVariant": "Каскадная таблица стилей"
+      },
+      "fourdQuestion": {
+        "firstVariant": "Цвет элемента",
+        "secondVariant": "Цвет границы элемента",
+        "thirdVariant": "Цвет фона элемента",
+        "fourdVariant": "Цвет шрифта"
+      }
+    }
+  }
+}
