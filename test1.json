@@ -7,29 +7,11 @@
       "fourdQuestion": "Чему равен интеграл sin(x)?"
     },
     "answers": {
-      "firstQuestion": {
-        "firstVariant": "10",
-        "secondVariant": "100",
-        "thirdVariant": "1000",
-        "fourdVariant": "10000"
-      },
-      "secondQuestion": {
-        "firstVariant": "1/4",
-        "secondVariant": "1/2",
-        "thirdVariant": "1",
-        "fourdVariant": "3/2"
-      },
-      "thirdQuestion": {
-        "firstVariant": "1/x",
-        "secondVariant": "1",
-        "thirdVariant": "x",
-        "fourdVariant": "1/x^2"
-      },
-      "fourdQuestion": {
-        "firstVariant": "sin(x)+С",
-        "secondVariant": "cos(x)+С",
-        "thirdVariant": "-sin(x)+С",
-        "fourdVariant": "-cos(x)+С"
+      "Variants":{
+        "A": ["10", "100", "1000", "10000"],
+        "B": ["1/4", "1/2", "1", "3/2"],
+        "C": [ "1/x", "1", "x", "1/x^2"],
+        "D": ["sin(x)+С", "cos(x)+С", "-sin(x)+С" ,"-cos(x)+С"]
       }
     }
   }
