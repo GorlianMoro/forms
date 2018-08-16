@@ -4,8 +4,9 @@ if (is_uploaded_file($_FILES['fileTest']['tmp_name'])) {
 }
 
 if (!empty($_FILES)) {
-  move_uploaded_file($_FILES['fileTest']['tmp_name'], 'list.php');
-  move_uploaded_file($_FILES['fileTest']['tmp_name'], 'test.php');
+  $numbtest = rand(1, 10);
+  $dir = "Tests/FileTest$numbtest.json";
+  move_uploaded_file($_FILES['fileTest']['tmp_name'], "$dir");
 }
 else {
   echo "Файл не загружен";
@@ -19,18 +20,12 @@ else {
      <title>Админка</title>
    </head>
    <body>
-     <form enctype="multipart/form-data" action="list.php" method="POST">
+     <form enctype="multipart/form-data" action="admin.php" method="POST">
        <div class="forma">
           <input type="file" name="fileTest" value="Загрузить файл"> <br>
           <input type="submit" name="button" value="Отправить">
        </div>
      </form>
-     <form enctype="multipart/form-data" action="test.php?testnumber=1" method="POST">
-       <div class="forma">
-          <input type="file" name="fileTest" value="Загрузить файл"> <br>
-          <input type="submit" name="button" value="Отправить">
-       </div>
-     </form>
-     </form>
+     <a href="list.php">Список тестов</a>
    </body>
  </html>
