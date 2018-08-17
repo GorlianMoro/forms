@@ -1,7 +1,6 @@
 <?php
-$dir = '/OSPanel/domains/localhost/dz6/Tests';
+$dir = 'Tests';
 $files = scandir($dir);
-$num = rand(1,10);
  ?>
 
  <!DOCTYPE html>

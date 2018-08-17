@@ -1,6 +1,10 @@
 <?php
-$dir = '/OSPanel/domains/localhost/dz6/Tests';
+$dir = 'Tests';
 $files = scandir($dir);
+
+var_dump($_POST);
+
+print_r($_POST['q1']);
 
 $ftest = $_GET['tnum'];
 
@@ -15,19 +19,19 @@ if (isset($_POST['done']))
 
   if ($ftest == $files[2])
   {
-    if ($_POST['q3'] == 'on')
+    if ($_POST['1000'] == 'on')
     {
       echo "На первый вопрос ответ правильный" . "<br>";
     }
-    if ($_POST['q6'] == 'on')
+    if ($_POST['1/2'] == 'on')
     {
       echo "На второй вопрос ответ правильный" . "<br>";
     }
-    if ($_POST['q10'] == 'on')
+    if ($_POST['1'] == 'on')
     {
       echo "На третий вопрос ответ правильный" . "<br>";
     }
-    if ($_POST['q16'] == 'on')
+    if ($_POST['-cos(x)+С'] == 'on')
     {
       echo "На четвертый вопрос ответ правильный" . "<br>";
     }
@@ -35,19 +39,19 @@ if (isset($_POST['done']))
 
   if ($ftest == $files[3])
   {
-    if ($_POST['q2'] == 'on')
+    if ($_POST['Язык_разметки_страницы'] == 'on')
     {
       echo "На первый вопрос ответ правильный" . "<br>";
     }
-    if ($_POST['q5'] == 'on')
+    if ($_POST['Определяет_абзац_текста'] == 'on')
     {
       echo "На второй вопрос ответ правильный" . "<br>";
     }
-    if ($_POST['q12'] == 'on')
+    if ($_POST['Каскадная_таблица_стилей'] == 'on')
     {
       echo "На третий вопрос ответ правильный" . "<br>";
     }
-    if ($_POST['q15'] == 'on')
+    if ($_POST['Цвет_фона_элемента'] == 'on')
     {
       echo "На четвертый вопрос ответ правильный" . "<br>";
     }
@@ -67,31 +71,27 @@ if (isset($_POST['done']))
         <?php foreach ($test1file->Test as $field ): ?>
           <fieldset>
               <legend><?php echo $field->field1[0]->firstQuestion;?></legend>
-              <label> <input type="checkbox" name="q1"> <?php echo $field->field1[0]->FQ[0]; ?>
-              <label> <input type="checkbox" name="q2"> <?php echo $field->field1[0]->FQ[1]; ?>
-              <label> <input type="checkbox" name="q3"> <?php echo $field->field1[0]->FQ[2]; ?>
-              <label> <input type="checkbox" name="q4"> <?php echo $field->field1[0]->FQ[3]; ?> </label>
+              <?php foreach ($field->field1[0]->FQ as $answ): ?>
+                  <label> <input type="checkbox" name="<?php echo $answ; ?>"> <?php echo $answ; ?> </label>
+              <?php endforeach; ?>
           </fieldset>
           <fieldset>
             <legend><?php echo $field->field2[0]->secondQuestion;?></legend>
-            <label> <input type="checkbox" name="q5"> <?php echo $field->field2[1]->SQ[0]; ?>
-            <label> <input type="checkbox" name="q6"> <?php echo $field->field2[1]->SQ[1]; ?>
-            <label> <input type="checkbox" name="q7"> <?php echo $field->field2[1]->SQ[2]; ?>
-            <label> <input type="checkbox" name="q8"> <?php echo $field->field2[1]->SQ[3]; ?> </label>
+            <?php foreach ($field->field2[1]->SQ as $answ2): ?>
+                <label> <input type="checkbox" name="<?php echo $answ2; ?>"> <?php echo $answ2; ?> </label>
+            <?php endforeach; ?>
           </fieldset>
           <fieldset>
             <legend><?php echo $field->field3[0]->thirdQuestion;?></legend>
-            <label> <input type="checkbox" name="q9"> <?php echo $field->field3[1]->TQ[0]; ?>
-            <label> <input type="checkbox" name="q10"> <?php echo $field->field3[1]->TQ[1]; ?>
-            <label> <input type="checkbox" name="q11"> <?php echo $field->field3[1]->TQ[2]; ?>
-            <label> <input type="checkbox" name="q12"> <?php echo $field->field3[1]->TQ[3]; ?> </label>
+            <?php foreach ($field->field3[1]->TQ as $answ3): ?>
+                <label> <input type="checkbox" name="<?php echo $answ3; ?>"> <?php echo $answ3; ?> </label>
+            <?php endforeach; ?>
           </fieldset>
           <fieldset>
             <legend><?php echo $field->field4[0]->fourdQuestion;?></legend>
-            <label> <input type="checkbox" name="q13"> <?php echo $field->field4[1]->FOUQ[0]; ?>
-            <label> <input type="checkbox" name="q14"> <?php echo $field->field4[1]->FOUQ[1]; ?>
-            <label> <input type="checkbox" name="q15"> <?php echo $field->field4[1]->FOUQ[2]; ?>
-            <label> <input type="checkbox" name="q16"> <?php echo $field->field4[1]->FOUQ[3]; ?> </label>
+            <?php foreach ($field->field4[1]->FOUQ as $answ4): ?>
+                <label> <input type="checkbox" name="<?php echo $answ4; ?>"> <?php echo $answ4; ?> </label>
+            <?php endforeach; ?>
           </fieldset>
         <?php endforeach; ?>
         <input type="submit" name="done" value="Отправить">
