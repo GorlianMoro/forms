@@ -6,6 +6,11 @@ if (is_uploaded_file($_FILES['fileTest']['tmp_name'])) {
 if (!empty($_FILES)) {
   $numbtest = rand(1, 10);
   $dir = "Tests/FileTest$numbtest.json";
+  if ($dir == $dir)
+  {
+    $numbtest = rand(1, 100);
+    $dir = "Tests/FileTest$numbtest.json";
+  }
   move_uploaded_file($_FILES['fileTest']['tmp_name'], "$dir");
 }
 else {
