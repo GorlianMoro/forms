@@ -1,16 +1,12 @@
 <?php
 $dir = 'Tests';
 $files = scandir($dir);
-
 $ftest = $_GET['tnum'];
-
 if (isset($_GET['tnum']))
 {
 $filejson = file_get_contents("Tests/$ftest") or exit('Не удалось получить данные');
 }
 $test1file = json_decode($filejson) or exit('Ошибка декодирования json');
-
-
 if (isset($_POST['done']))
 {
   foreach ($_POST as $answer)
@@ -28,7 +24,6 @@ if (isset($_POST['done']))
     }
   }
 }
-
  ?>
 
  <!DOCTYPE html>

@@ -3,14 +3,10 @@ if (is_uploaded_file($_FILES['fileTest']['tmp_name'])) {
   echo "File was loaded";
 }
 
-if (!empty($_FILES)) {
-  $numbtest = rand(1, 10);
-  if ($numbtest == $numbtest)
-  {
-    $numbtest = rand(1, 100);
-  }
-  $dir = "Tests/FileTest$numbtest.json";
-
+if (!empty($_FILES))
+{
+  $filet = $_FILES['fileTest']['name'];
+  $dir = "Tests/$filet";
   move_uploaded_file($_FILES['fileTest']['tmp_name'], "$dir");
 }
 else {
