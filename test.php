@@ -11,16 +11,21 @@ if (isset($_POST['done']))
 {
   foreach ($_POST as $answer)
   {
-    foreach ($test1file->Test as $anstrue)
+    if ($test1file->Test[0]->true == $answer)
     {
-      $chkarray = array($anstrue->question => $anstrue->true);
-      foreach ($chkarray as $chkarr)
-      {
-        if ($answer == $chkarr)
-        {
-          echo "Верно ";
-        }
-      }
+      echo "Первый ответ верный" . '<br>';
+    }
+    if ($answer == $test1file->Test[1]->true)
+    {
+      echo "Второй ответ верный ";
+    }
+    if ($test1file->Test[2]->true == $answer)
+    {
+      echo "Третий ответ верный ";
+    }
+    if ($test1file->Test[3]->true == $answer)
+    {
+      echo "Четвертый ответ верный ";
     }
   }
 }
@@ -41,7 +46,7 @@ if (isset($_POST['done']))
                  <?php echo $ques->question;?>
              </legend>
              <?php foreach ($ques->answer as $answ): ?>
-                 <label> <input type="checkbox" value="<?php echo $answ; ?>" name="<?php echo $ques->question ?>"> <?php echo $answ;?> </label>
+                 <label> <input type="radio" value="<?php echo $answ; ?>" name="<?php echo $ques->question ?>"> <?php echo $answ;?> </label>
              <?php endforeach; ?>
          </fieldset>
        <?php endforeach; ?>
